@@ -1,5 +1,3 @@
-const express = require("express");
-
 const prisma = require("../prisma/prisma");
 
 const getTask = async (req, res) => {
