@@ -3,6 +3,8 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
+var authMiddleware = require("./middleware/auth");
+
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var taskRouter = require("./routes/task");
@@ -15,7 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("api/task", taskRouter);
-app.use("api/users", usersRouter);
+app.use("api/task", authMiddleware, taskRouter);
+app.use("api/users", authMiddleware, usersRouter);
 
 module.exports = app;

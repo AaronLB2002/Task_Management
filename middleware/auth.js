@@ -17,4 +17,6 @@ const verifyToken = (req, res, next) => {
   });
 };
 
+module.exports = verifyToken;
+
 //maybe add roles if there is time then add role checks
