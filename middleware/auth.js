@@ -1,0 +1,20 @@
+const jwt = require("jsonwebtoken");
+
+const verifyToken = (req, res, next) => {
+  const token = req.cookies.token;
+
+  if (!token) {
+    return res.status(401).json({ error: "User is not authenticated" });
+  }
+
+  jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+    if (err) {
+      return res.status(401).json({ error: "User is not authenticated" });
+    }
+
+    req.user = decoded;
+    next();
+  });
+};
+
+//maybe add roles if there is time then add role checks

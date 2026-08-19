@@ -1,0 +1,23 @@
+{
+  "name": "takehome",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.9.1",
+    "@prisma/client": "^7.9.1",
+    "bcrpyt": "^2.0.0",
+    "cookie-parser": "~1.4.7",
+    "debug": "~4.4.3",
+    "dotenv": "^17.4.2",
+    "express": "~5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "~1.11.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "prisma": "^7.9.1"
+  }
+}
